@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     libcurl4-openssl-dev \
+    default-mysql-client \
     unzip \
     curl \
     git \
@@ -32,6 +33,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # 复制 Nginx 配置
 COPY nginx.conf /etc/nginx/sites-available/default
 
+# 复制数据库 SQL 文件
+COPY db/ /db/
+
 # 复制后端代码
 COPY jjj_food_chain/ /var/www/html/
 
@@ -45,7 +49,7 @@ RUN mkdir -p runtime/cache runtime/log runtime/temp runtime/session \
     && chmod -R 755 /var/www/html \
     && chmod -R 777 /var/www/html/runtime
 
-# 启动脚本
+# 复制启动脚本
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
