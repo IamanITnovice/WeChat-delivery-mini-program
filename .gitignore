@@ -1,0 +1,41 @@
+# ===== 敏感配置文件（绝对不上传）=====
+jjj_food_chain/.env
+jjj_food_chain/.env.local
+
+# ===== PHP 依赖（composer install 还原）=====
+jjj_food_chain/vendor/
+jjj_food_chain/runtime/
+jjj_food_chain/.idea/
+
+# ===== 前端依赖（npm install 还原）=====
+jjj_food_chain_shop/node_modules/
+jjj_food_chain_admin/node_modules/
+jjj_food_chain_app/node_modules/
+
+# ===== 前端构建产物 =====
+jjj_food_chain_shop/dist/
+jjj_food_chain_admin/dist/
+
+# ===== 编辑器 =====
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db
+
+# ===== 日志 =====
+*.log
+jjj_food_chain/vendor/workerman/workerman.log
+
+# ===== uni-app 编译产物 =====
+jjj_food_chain_app/unpackage/
+
+# ===== 系统文件 =====
+[Oo]bj/
+[Bb]in/
+bin-debug/
+bin-release/
+.settings/
+*.swf
+*.air
+*.ipa
+*.apk
